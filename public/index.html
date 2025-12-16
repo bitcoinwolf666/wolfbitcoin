@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>WolfRun: Bitcoin Chase</title>
+    <style>
+      html, body { margin:0; padding:0; background:#0b0f17; color:#fff; font-family:system-ui, Arial; }
+      #wrap { display:flex; flex-direction:column; height:100vh; }
+      #topbar { display:flex; gap:12px; align-items:center; padding:10px 12px; border-bottom:1px solid rgba(255,255,255,0.08); }
+      #topbar button { background:#1c2433; border:1px solid rgba(255,255,255,0.12); color:#fff; padding:8px 10px; border-radius:10px; cursor:pointer; }
+      #topbar button:hover { filter:brightness(1.1); }
+      #meta { opacity:0.9; font-size:14px; }
+      #game { flex:1; display:flex; align-items:center; justify-content:center; }
+      canvas { border-radius:16px; box-shadow:0 20px 80px rgba(0,0,0,0.45); }
+      .badge { padding:4px 8px; border-radius:999px; background:rgba(0,200,120,0.18); border:1px solid rgba(0,200,120,0.35); font-size:12px; }
+      .muted { opacity:0.75; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="topbar">
+        <strong>🐺 WolfRun</strong>
+        <span id="premiumTag" class="badge" style="display:none;">Premium Unlocked</span>
+        <span id="meta" class="muted">Jump: ↑ / Space • Slide: ↓ • Dash: Shift</span>
+        <div style="margin-left:auto; display:flex; gap:10px;">
+          <button id="buyBtn">Unlock Premium</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+      </div>
+      <div id="game"></div>
+    </div>
+
+    <script src="./ui.js"></script>
+    <script src="./game.js"></script>
+  </body>
+</html>
